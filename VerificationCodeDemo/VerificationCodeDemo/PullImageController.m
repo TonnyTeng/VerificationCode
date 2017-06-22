@@ -31,7 +31,6 @@
     [self.scrollView addSubview:self.button];
 }
 
-
 #pragma mark - Action
 - (void)goBackAction{
 
@@ -45,9 +44,8 @@
     // 偏移量y的变化
     CGFloat dy = scrollView.contentOffset.y;
     NSLog(@"%f", dy);
-    // 判断拉倒方向
+    
 //    if (dy < 0) {
-        // 利用公式
         self.imageView.frame =CGRectMake(0, dy,kWidth, self.imageViewHeight - dy);
 //    }
 }
@@ -75,7 +73,6 @@
     }
     return _imageView;
 }
-
 
 - (UIButton *)button{
 
