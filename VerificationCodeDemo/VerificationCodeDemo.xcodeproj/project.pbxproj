@@ -14,6 +14,7 @@
 		061FB3E51EFB5ED600C141F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 061FB3E41EFB5ED600C141F6 /* Assets.xcassets */; };
 		061FB3E81EFB5ED600C141F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061FB3E61EFB5ED600C141F6 /* LaunchScreen.storyboard */; };
 		061FB3F71EFB665D00C141F6 /* UnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = 061FB3F61EFB665D00C141F6 /* UnitField.m */; };
+		061FB3FA1EFB975600C141F6 /* PullImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 061FB3F91EFB975600C141F6 /* PullImageController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		061FB3E91EFB5ED600C141F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		061FB3F51EFB665D00C141F6 /* UnitField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitField.h; sourceTree = "<group>"; };
 		061FB3F61EFB665D00C141F6 /* UnitField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitField.m; sourceTree = "<group>"; };
+		061FB3F81EFB975600C141F6 /* PullImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullImageController.h; sourceTree = "<group>"; };
+		061FB3F91EFB975600C141F6 /* PullImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullImageController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				061FB3DC1EFB5ED600C141F6 /* AppDelegate.m */,
 				061FB3DE1EFB5ED600C141F6 /* ViewController.h */,
 				061FB3DF1EFB5ED600C141F6 /* ViewController.m */,
+				061FB3F81EFB975600C141F6 /* PullImageController.h */,
+				061FB3F91EFB975600C141F6 /* PullImageController.m */,
 				061FB3E11EFB5ED600C141F6 /* Main.storyboard */,
 				061FB3E41EFB5ED600C141F6 /* Assets.xcassets */,
 				061FB3E61EFB5ED600C141F6 /* LaunchScreen.storyboard */,
@@ -158,6 +163,7 @@
 			files = (
 				061FB3E01EFB5ED600C141F6 /* ViewController.m in Sources */,
 				061FB3DD1EFB5ED600C141F6 /* AppDelegate.m in Sources */,
+				061FB3FA1EFB975600C141F6 /* PullImageController.m in Sources */,
 				061FB3F71EFB665D00C141F6 /* UnitField.m in Sources */,
 				061FB3DA1EFB5ED600C141F6 /* main.m in Sources */,
 			);
@@ -318,6 +324,7 @@
 				061FB3EE1EFB5ED600C141F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

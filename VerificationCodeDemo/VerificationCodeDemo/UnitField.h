@@ -50,7 +50,7 @@ IB_DESIGNABLE
 /**
  保留的用户输入的字符串
  */
-@property (nullable, nonatomic, copy, readonly) NSString *text;
+@property (nullable, nonatomic, copy) NSString *text;//readonly
 
 /**
  当需要密文输入时，可以设置该值为 YES，输入文字将被圆点替代

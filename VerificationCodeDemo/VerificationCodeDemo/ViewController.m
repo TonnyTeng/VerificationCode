@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "UnitField.h"
+#import "PullImageController.h"
+
+#define kCount  4
 
 @interface ViewController ()<UnitFieldDelegate>
 
@@ -29,10 +32,9 @@
         
         CGFloat width = self.view.frame.size.width;
         
-        NSInteger count = 6;
-        CGFloat space = 15;
+        CGFloat space = 40;
         
-        _smsCodeUnitField = [[UnitField alloc] initWithInputUnitCount:count];
+        _smsCodeUnitField = [[UnitField alloc] initWithInputUnitCount:kCount];
         _smsCodeUnitField.frame = CGRectMake(space, 100, width - space * 2, 1);
         _smsCodeUnitField.textFont = [UIFont boldSystemFontOfSize:36];
         
@@ -58,10 +60,15 @@
 
 - (void)unitFieldEditingChanged:(UnitField *)sender {
     //四位验证码 输入完毕 验证验证码
-    if (sender.text.length == 6) {
+    if (sender.text.length == kCount) {
         //清空输入框
         NSLog(@"输入完成...%@",sender.text);
         [_smsCodeUnitField resignFirstResponder];
+        
+        PullImageController *vc = [[PullImageController alloc] init];
+        [self presentViewController:vc animated:YES completion:^{
+            _smsCodeUnitField.text = @"";
+        }];
     }
 }
 

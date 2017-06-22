@@ -74,10 +74,10 @@ NSString *const UnitFieldDidResignFirstResponderNotification = @"UnitFieldDidRes
     [super setBackgroundColor:[UIColor clearColor]];
     _string = [NSMutableArray array];
     _contentSize = DEFAULT_CONTENT_SIZE;
-    _secureTextEntry = NO;
-    _unitSpace = 12;
-    _borderRadius = 0;
-    _borderWidth = 1;
+    _secureTextEntry = NO;//没加密
+    _unitSpace = 12;//间距
+    _borderRadius = 0;//圆角
+    _borderWidth = 1;//边框线宽
     _textFont = [UIFont systemFontOfSize:22];
     _defaultKeyboardType = KeyboardTypeNumberPad;
     _defaultReturnKeyType = UIReturnKeyDone;
@@ -94,6 +94,7 @@ NSString *const UnitFieldDidResignFirstResponderNotification = @"UnitFieldDidRes
     [self.layer addSublayer:self.cursorLayer];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [self setNeedsDisplay];
+        //setNeedsDisplay异步执行的。它会自动调用drawRect方法，这样可以拿到 UIGraphicsGetCurrentContext，就可以绘制了。而setNeedsLayout会默认调用layoutSubViews，处理子视图中的一些数据。
     }];
 }
 
@@ -123,7 +124,7 @@ NSString *const UnitFieldDidResignFirstResponderNotification = @"UnitFieldDidRes
         [_cursorLayer addAnimation:animate forKey:nil];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self layoutIfNeeded];
+            [self layoutIfNeeded];//setNeedsLayout会默认调用layoutSubViews，处理子视图中的一些数据。
             
             _cursorLayer.position = CGPointMake(CGRectGetWidth(self.bounds) / _inputUnitCount / 2, CGRectGetHeight(self.bounds) / 2);
         }];
@@ -453,6 +454,7 @@ NSString *const UnitFieldDidResignFirstResponderNotification = @"UnitFieldDidRes
 }
 
 - (void)_showOrHideCursorIfNeeded {
+    
     _cursorLayer.hidden = !self.isFirstResponder || _cursorColor == nil || _inputUnitCount == _string.count;
     
     if (_cursorLayer.hidden) return;
