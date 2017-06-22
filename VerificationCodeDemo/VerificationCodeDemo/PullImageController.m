@@ -49,9 +49,6 @@
 //    if (dy < 0) {
         // 利用公式
         self.imageView.frame =CGRectMake(0, dy,kWidth, self.imageViewHeight - dy);
-//    }else{
-    
-//        self.imageView.frame =CGRectMake(0, dy,kWidth, self.imageViewHeight - dy);
 //    }
 }
 
