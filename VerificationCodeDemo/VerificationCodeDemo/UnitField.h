@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
+
 UIKIT_EXTERN NSNotificationName const UnitFieldDidBecomeFirstResponderNotification;
 UIKIT_EXTERN NSNotificationName const UnitFieldDidBecomeFirstResponderNotification;
 #else
@@ -24,6 +25,7 @@ UIKIT_EXTERN NSString *const UnitFieldDidBecomeFirstResponderNotification;
 @protocol UnitFieldDelegate <NSObject>
 
 @optional
+
 - (BOOL)unitField:(UnitField *)uniField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 
 @end
@@ -31,10 +33,11 @@ UIKIT_EXTERN NSString *const UnitFieldDidBecomeFirstResponderNotification;
 /**
  键盘样式
  
- - WLKeyboardTypeNumberPad: 纯数字键盘
- - WLKeyboardTypeASCIICapable: ASCII 字符键盘
+ - KeyboardTypeNumberPad: 纯数字键盘
+ - KeyboardTypeASCIICapable: ASCII 字符键盘
  */
 typedef NS_ENUM(NSUInteger, KeyboardType) {
+    
     KeyboardTypeNumberPad,
     KeyboardTypeASCIICapable
 };
@@ -65,7 +68,7 @@ IB_DESIGNABLE
 #if TARGET_INTERFACE_BUILDER
 /**
  允许输入的个数。
- 目前 WLUnitField 允许的输入单元个数区间控制在 1 ~ 8 个。任何超过该范围内的赋值行为都将被忽略。
+ 目前 UnitField 允许的输入单元个数区间控制在 1 ~ 8 个。任何超过该范围内的赋值行为都将被忽略。
  */
 @property (nonatomic, assign) IBInspectable NSUInteger inputUnitCount;
 #else
@@ -76,7 +79,7 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable NSInteger defaultKeyboardType;
 @property (nonatomic, assign) IBInspectable NSInteger defaultReturnKeyType;
 #else
-@property (nonatomic, assign) KeyboardType defaultKeyboardType;       // 默认为 WLKeyboardTypeNumberPad。
+@property (nonatomic, assign) KeyboardType defaultKeyboardType;       // 默认为 KeyboardTypeNumberPad。
 @property (nonatomic, assign) UIReturnKeyType defaultReturnKeyType;     // 默认为 UIReturnKeyDone。
 #endif
 
@@ -140,9 +143,6 @@ IB_DESIGNABLE
 - (instancetype)initWithInputUnitCount:(NSUInteger)count;
 
 @end
-
-
-
 
 
 NS_ASSUME_NONNULL_END

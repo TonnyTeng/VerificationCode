@@ -41,7 +41,7 @@
         _smsCodeUnitField.trackTintColor = [UIColor greenColor];//输入边框颜色
         _smsCodeUnitField.cursorColor = [UIColor purpleColor];//当前光标颜色
         _smsCodeUnitField.delegate = self;
-        _smsCodeUnitField.unitSpace = space;//间距
+        _smsCodeUnitField.unitSpace = space;//输入框间距
         _smsCodeUnitField.borderRadius = 4;
         [_smsCodeUnitField sizeToFit];
         [_smsCodeUnitField addTarget:self action:@selector(unitFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
